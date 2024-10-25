@@ -3,7 +3,7 @@ name: Build and deploy Python app to Azure Web App - Python-DevOps
 on:
   push:
     branches:
-      - main
+      - master
   workflow_dispatch:
 
 jobs:
@@ -69,14 +69,14 @@ jobs:
       - name: Login to Azure
         uses: azure/login@v2
         with:
-          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_D19538E91D684761943656081A49B475 }}
-          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_926FF673B1C84B45831896014FD828AC }}
-          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_8C11D0180E79415EA8748D2DDA6FBDF3 }}
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_6567C20310A74EC2BFB083BFDD074A1A }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_63B3314338974A92B697F95B2BB522D3 }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_756955FF6C944DAE970C8B21498543D7 }}
 
       # Step 4: Deploy to Azure Web App
       - name: Deploy to Azure Web App
         uses: azure/webapps-deploy@v3
         id: deploy-to-webapp
         with:
-          app-name: 'math-app'  # Replace with your actual Azure Web App name
+          app-name: 'math-apps'  # Replace with your actual Azure Web App name
           slot-name: 'Production'
