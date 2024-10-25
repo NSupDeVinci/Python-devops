@@ -5,7 +5,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def home():
-    return "Welcome to the Flask API! This is the new message Octobre 25"
+    return "ALLEZ L'OM"
 
 @app.route('/add', methods=['POST'])
 def add():
